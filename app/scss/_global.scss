@@ -1,0 +1,52 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	@extend %oswald;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.4;
+	background-color: $bg;
+	color: $white;
+	letter-spacing: 0.02em;
+}
+
+path {
+	transition: opacity 0.5s;
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.container {
+	max-width: 1130px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.main-title {
+	letter-spacing: 0.2em;
+	line-height: 0.9;
+	text-transform: uppercase;
+	@extend %cormorant;
+	font-size: 200px;
+	font-weight: 300;
+}
+
+.title {
+	@extend %cormorant;
+	font-size: 100px;
+	font-weight: 400;
+}
+
+.logo {
+	object-fit: cover;
+}
+
+
