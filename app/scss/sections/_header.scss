@@ -52,10 +52,6 @@
 		align-items: center;
 	}
 
-	&__search {
-
-	}
-
 	&__input {
 		background-color: transparent;
 		border: none;
@@ -88,9 +84,6 @@
 		color: $blue;
 	}
 
-	&__info {
-	}
-
 	&__address {
 		font-size: 14px;
 		color: $blue;
@@ -102,9 +95,7 @@
 		flex-direction: column;
 	}
 
-	&__main {
-	}
-
+	
 	&__middle {
 		display: flex;
 		justify-content: space-between;
@@ -130,9 +121,6 @@
 		}
 	}
 
-	&__ref {
-	}
-
 	&__bottom {
 		display: flex;
 		justify-content: space-between;
@@ -155,6 +143,7 @@
 		color: $black;
 		font-size: 12px;
 		font-weight: 700;
+		letter-spacing: 0.1em;
 		background-color: $blue;
 		max-width: 220px;
 		width: 100%;
