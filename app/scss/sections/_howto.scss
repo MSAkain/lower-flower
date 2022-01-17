@@ -1,0 +1,94 @@
+.howto {
+	position: relative;
+	z-index: 2;
+	padding-bottom: 160px;
+
+
+	&::after {
+		content: '';
+		position: absolute;
+		background-image: url('../images/main/flowers-bg.png');
+		background-repeat: no-repeat;
+		width: 562px;
+		height: 845px;
+		left: 0%;
+		top: -10%;
+	}
+
+	&__title {
+		max-width: 684px;
+		text-align: left;
+		line-height: 0.8;
+		margin-bottom: 80px;
+	}
+
+	&__list {
+		position: relative;
+		max-width: 778px;
+		width: 100%;
+		padding-right: 137px;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-left: auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0 115px;
+		flex-wrap: wrap;
+		align-items: center;
+		border-right: 1px solid $pink;
+
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 65px;
+			height: 10px;
+			background-color: $pink;
+			top: -40px;
+			left: 0;
+		}
+		
+
+		&::before {
+			position: absolute;
+			content: '';
+			background-image: url('../images/icons/text-4.svg');
+			background-repeat: no-repeat;
+			width: 305px;
+			height: 180px;
+			transform: rotate(-4.95deg);
+			bottom: -25%;
+			right: -10%;
+		}
+	}
+
+	&__item {
+
+		&:nth-child(1) {
+			margin-bottom: 40px;
+		}
+
+		&:nth-child(3) {
+			margin-bottom: 40px;
+		}
+
+		&:nth-child(2) {
+			margin-bottom: -18px;
+		}
+
+		&:nth-child(4) {
+			margin-bottom: -80px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 30px;
+		margin-bottom: 12px;
+		color: $pink;
+	}
+
+	&__text {
+		max-width: 265px;
+	}
+}
+

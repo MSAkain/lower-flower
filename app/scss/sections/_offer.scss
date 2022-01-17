@@ -1,0 +1,135 @@
+.offer {
+	margin-bottom: 160px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 23%;
+		height: 125%;
+		background-image: url('../images/main/bg-offer.png');
+		background-repeat: no-repeat;
+		right: 0%;
+		top: -7%;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		line-height: 1;
+		letter-spacing: 0.15em;
+		span {
+			padding-left: 340px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				width: 255px;
+				height: 1px;
+				background-color: $pink;
+				left:71px;
+				top: 67px;
+			}
+		}
+	}
+
+	&__img {
+		border-radius: 20px;
+	}
+
+	&__wrapper {
+		text-transform: uppercase;
+		margin-bottom: 40px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__content {
+		letter-spacing: 0.04em;
+		width: 100%;
+		max-width: 270px;
+	}
+
+	&__list {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-image: url('../../images/icons/arrow-3.svg');
+			background-repeat: no-repeat;
+			width: 20px;
+			height: 60px;
+			left: -5%;
+			bottom: -27%;
+			transform: rotate(14deg);
+		}
+	}
+
+	&__text {
+		padding-left: 22px;
+		margin-bottom: 40px;
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 22px;
+
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			background-color: $white;
+			border-radius: 50%;
+			left: 6px;
+			top: 8px;
+		}
+	}
+
+	&__photos {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 730px;
+		width: 100%;
+	}
+
+	&__object {
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__button {
+		max-width: 255px;
+		display: block;
+		text-align: center;
+		width: 100%;
+		padding: 16px 0;
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 0.1em;
+		background-color: $blue;
+		text-transform: uppercase;
+		color: $black;
+		transition: color 0.5s linear, background-color 0.5s linear;
+
+		&:hover,
+		&:active {
+			color: $white;
+			background-color: $purple;
+		}
+	}
+}
+
