@@ -1,0 +1,67 @@
+.instagram {
+	padding-top: 261px;
+	padding-bottom: 200px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-image: url('../images/main/bg-inst.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		top: 14%;
+		z-index: -1;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__photos {
+		display: flex;
+		margin-right: 30px;
+		max-width: 730px;
+	}
+
+	&__photo {
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__socials {
+		position: relative;
+		height: 163px;
+		width: 100%;
+		max-width: 350px;
+		position: relative;
+		border-top: 1px solid $blue;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		&::before {
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/text-3.svg');
+			background-repeat: no-repeat;
+			width: 305px;
+			height: 170px;
+			top: -54%;
+			left: -2%;
+		}
+	}
+
+	&__item {
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
+

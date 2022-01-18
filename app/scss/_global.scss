@@ -51,4 +51,37 @@ path {
 	object-fit: cover;
 }
 
+.button {
+	text-transform: uppercase;
+	color: $black;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	background-color: $blue;
+	width: 100%;
+	padding: 16px 0;
+	transition: color 0.5s linear, background-color 0.5s linear;
+	border: 1px solid transparent;
+
+	&:hover,
+	&:active {
+		color: $white;
+		background-color: $purple;
+	}
+
+	&--transparent {
+		background-color: transparent;
+		color: $white;
+		border-color: $white;
+
+		&:hover,
+		&:active {
+			background-color: $blue;
+			border-color: $blue;
+			color: $accent;
+		}
+	}
+}
+
+
 

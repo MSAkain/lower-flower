@@ -52,7 +52,7 @@
 	&__content {
 		letter-spacing: 0.04em;
 		width: 100%;
-		max-width: 270px;
+		max-width: 284px;
 	}
 
 	&__list {
@@ -65,9 +65,8 @@
 			background-repeat: no-repeat;
 			width: 20px;
 			height: 60px;
-			left: -5%;
-			bottom: -27%;
-			transform: rotate(14deg);
+			left: -8px;
+			bottom: -33%;
 		}
 	}
 
@@ -112,24 +111,10 @@
 	}
 
 	&__button {
+		margin-left: 22px;
 		max-width: 255px;
 		display: block;
 		text-align: center;
-		width: 100%;
-		padding: 16px 0;
-		font-weight: 700;
-		font-size: 12px;
-		letter-spacing: 0.1em;
-		background-color: $blue;
-		text-transform: uppercase;
-		color: $black;
-		transition: color 0.5s linear, background-color 0.5s linear;
-
-		&:hover,
-		&:active {
-			color: $white;
-			background-color: $purple;
-		}
 	}
 }
 

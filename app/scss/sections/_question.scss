@@ -1,0 +1,125 @@
+.question {
+	position: relative;
+	padding: 52px 0;
+	background-color: $bg-section;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		left: 0;
+	}
+
+	&::before {
+		background-image: url('../images/main/bg-qust.png');
+		width: 854px;
+		height: 960px;
+		bottom: -30%;
+		z-index: 1;
+	}
+
+
+	&::after {
+		background-image: url('../images/main/flowers-bg-2.png');
+		bottom: -44%;
+		width: 700px;
+		height: 1040px;
+		z-index: 2;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		position: relative;
+		max-width: 630px;
+		line-height: 1;
+		letter-spacing: 0.02em;
+		z-index: 4;
+		span {
+			display: block;
+			padding-left: 83px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/text-5.svg');
+			background-repeat: no-repeat;
+			width: 305px;
+			height: 305px;
+			bottom: 10%;
+			right: -21%;
+			transform: rotate(-4.44deg);
+			z-index: 10;
+		}
+	}
+
+	&__content {
+		max-width: 450px;
+		margin-top: 60px;
+	}
+
+	&__text {
+		position: relative;
+		margin-left: auto;
+		text-align: left;
+		letter-spacing: 0.04em;
+		max-width: 255px;
+		padding-top: 54px;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			border: 1px solid $blue;
+		}
+	}
+
+	&__input,
+	&__textarea {
+		width: 100%;
+		margin-left: auto;
+		display: block;
+		border: 1px solid $blue;
+		background-color: transparent;
+		padding: 19px 20px 20px 20px;
+
+		&::placeholder {
+			color: $silver;
+			letter-spacing: 0.04em;
+		}
+	}
+
+	&__input {
+		margin-bottom: 10px;
+	}
+
+	&__textarea {
+		min-height: 120px;
+		margin-bottom: 20px;
+	}
+
+	&__button {
+		margin-bottom: 10px;
+		max-width: 255px;
+	}
+
+	&__descr {
+		text-transform: lowercase;
+		font-size: 10px;
+		letter-spacing: 0.02em;
+	}
+
+	&__link {
+		color: $pink;
+	}
+}
+
