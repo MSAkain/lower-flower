@@ -1,0 +1,291 @@
+.busket {
+	position: fixed;
+	right: 0;
+	z-index: 112;
+	height: 100vh;
+	background-color: $black;
+	text-transform: uppercase;
+	min-width: 420px;
+	transform: translateX(200%);
+	transition: transform 0.5s;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-image: url('../images/main/busket.svg');
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		right: 0%;
+		top: -4%;
+		z-index: -1;
+	}
+
+	&__container {
+		padding: 20px 30px 20px 30px;
+	}
+
+	&__inner {
+		height: 95vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 16px;
+		border-bottom: 1px solid $border;
+	}
+
+	&__title {
+		letter-spacing: 0.04em;
+		font-size: 30px;
+		color: $blue;
+	}
+
+	&__items {
+		margin-bottom: 20px;
+	}
+
+	&__offer {
+		margin-bottom: 13px;
+		letter-spacing: 0.02em;
+		display: block;
+		span {
+			color: $blue;
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 30px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $border;
+	}
+
+	&__object {
+		display: flex;
+		width: 50%;
+	}
+
+	&__photo {
+		max-width: 60px;
+		height: 60px;
+		width: 100%;
+		margin-right: 10px;
+	}
+
+	&__content {
+		max-width: 95px;
+	}
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: 12px;
+		letter-spacing: 0.02em;
+		margin-bottom: 3px;
+	}
+
+	&__price {
+		color: $blue;
+		font-weight: 700;
+		font-size: 12px;
+		margin-bottom: 1px;
+		display: block;
+	}
+
+	&__btn {
+		text-transform: uppercase;
+		padding: 0;
+		font-size: 10px;
+		color: $blue;
+		text-decoration: underline;
+	}
+
+	&__bottom {
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+	}
+
+	&__cost {
+		color: $blue;
+	}
+
+	&__info {
+		margin-bottom: 20px;
+	}
+
+	&__button {
+		padding-top: 19px;
+		padding-bottom: 18px;
+	}
+}
+.ticket {
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 1px solid $border;
+	&__wrapper {
+		display: flex;
+	}
+
+	&__photo {
+		max-width: 60px;
+		width: 100%;
+		margin-right: 20px;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-weight: 400;
+		letter-spacing: 0.02em;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-left: auto;
+	}
+
+	&__price {
+		color: $blue;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+	}
+
+	&__button {
+		color: $white;
+		letter-spacing: 0.04em;
+		font-size: 10px;
+		padding: 0;
+		text-transform: uppercase;
+		text-decoration: underline;
+	}
+}
+
+.jq-number__field {
+	width: 100px;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
+	transform: translateY(1px);
+	border: 1px solid $border;
+}
+
+.jq-number__field input {
+	border: none;
+	height: 30px;
+	background-color: none;
+	text-align: center;
+	padding: 8px 9px;
+	width: 100%;
+	color: $border;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 1;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+}
+
+.jq-number {
+	padding-right: 0;
+}
+
+.jq-number__spin {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 24px;
+	width: 24px;
+	height: 26px;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	cursor: pointer;
+	background: none;
+
+	&:hover,
+	&:active {
+		background: none;
+	}
+}
+
+.jq-number__spin::after {
+	color: $border;
+	background-color: $border;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 4px;
+	width: 9px;
+	height: 1px;
+	border: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+}
+
+.jq-number__spin.plus::before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 9px;
+	background-color: $border;
+	right: 9px;
+	top: 5px;
+}
+
+.jq-number__spin.minus {
+	left: 7px;
+	top: 17px;
+
+	&:hover,
+	&:active {
+		background: none;
+	}
+}
+
+.jq-number__spin.plus {
+	right: 19px;
+	top: 20px;
+
+	&:hover,
+	&:active {
+		background: none;
+	}
+}
+
+.jq-number__spin.minus::after {
+	border: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	right: 0;
+	top: 12px;
+	background-color: $border;
+}
+
+.jq-number__spin.plus::after {
+	border: none;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	left: 10px;
+	background-color: $border;
+	top: 9px;
+}
+
