@@ -43,18 +43,61 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		position: relative;
+
+		&--active {
+			display: block;
+			width: 100%;
+			max-width: 370px;
+		}
+	}
+
+	&__search {
+		&--active {
+			position: absolute;
+			left: -8px;
+			bottom: 4px;
+		}
 	}
 
 	&__input {
 		background-color: transparent;
 		border: none;
 		max-width: 75px;
+		width: 100%;
 		padding-right: 5px;
+		transition: max-width 0.5s linear;
+		outline: none;
 
 		&::placeholder {
 			color: $white;
 			text-transform: uppercase;
 			letter-spacing: 0.04em;
+		}
+
+		&--active {
+			padding-left: 30px;
+			padding-bottom: 4px;
+			border-bottom: 1px solid $border;
+			max-width: 370px;
+
+			&::placeholder {
+				font-weight: 300;
+				letter-spacing: 0.02em;
+				text-transform: none;
+				color: $gray-2;
+			}
+		}
+	}
+
+	&__close {
+		display: none;
+
+		&--active {
+			display: block;
+			position: absolute;
+			right: -7px;
+			bottom: 3px;
 		}
 	}
 
@@ -81,6 +124,10 @@
 			background-repeat: no-repeat;
 			left: 2px;
 			top: 2px;
+		}
+
+		&--disabled {
+			display: none;
 		}
 	}
 
