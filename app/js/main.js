@@ -3,6 +3,7 @@ $(function () {
 	const lastScrollTop = 0;
 	const headerScroll = document.querySelector('.header-scroll');
 	const body = document.querySelector('body');
+	const wrapper = document.querySelector('.wrapper')
 	const headerBusket = document.querySelector('.header__basket');
 	const busket = document.querySelector('.busket');
 	const busketClose = document.querySelector('.busket__close');
@@ -13,6 +14,16 @@ $(function () {
 	const headerScrollSearch = document.querySelector('.header-scroll__search');
 	const headerScrollClose = document.querySelector('.header-scroll__close');
 	const headerScrollRef = document.querySelector('.header-scroll__ref');
+	const menuMobile = document.querySelector('.menu-mobile');
+	const menuMobileBurger = document.querySelector('.mobile-header__burger');
+	const menuMobileInput = document.querySelector('.menu-mobile__input');
+	const menuMobileForm = document.querySelector('.menu-mobile__form');
+	const menuMobileSearch = document.querySelector('.menu-mobile__search');
+	const menuMobileClose = document.querySelector('.menu-mobile__close');
+	const menuMobileRef = document.querySelector('.menu-mobile__ref');
+	const menuMobileBtn = document.querySelector('.menu-mobile__button');
+
+
 
 
 
@@ -83,7 +94,36 @@ $(function () {
 		headerScrollSearch.classList.remove('header-scroll__search--active');
 		headerScrollClose.classList.remove('header-scroll__close--active');
 		headerScrollRef.classList.remove('header-scroll__ref--disabled');
-		document.getElementsByName('search')[0].placeholder = 'Поиск';
+		document.getElementsByName('search-mobile')[0].placeholder = 'Поиск';
+	})
+
+
+	menuMobileInput.addEventListener('click', function () {
+		menuMobileInput.classList.add('menu-mobile__input--active');
+		menuMobileForm.classList.add('menu-mobile__form--active');
+		menuMobileSearch.classList.add('menu-mobile__search--active');
+		menuMobileClose.classList.add('menu-mobile__close--active');
+		menuMobileRef.classList.add('menu-mobile__ref--disabled');
+		document.getElementsByName('search')[0].placeholder = 'Введите свой запрос';
+	})
+
+	menuMobileClose.addEventListener('click', function () {
+		menuMobileInput.classList.remove('menu-mobile__input--active');
+		menuMobileForm.classList.remove('menu-mobile__form--active');
+		menuMobileSearch.classList.remove('menu-mobile__search--active');
+		menuMobileClose.classList.remove('menu-mobile__close--active');
+		menuMobileRef.classList.remove('menu-mobile__ref--disabled');
+		document.getElementsByName('search-mobile')[0].placeholder = 'Поиск';
+	})
+
+	menuMobileBurger.addEventListener('click', function () {
+		menuMobile.classList.add('menu-mobile--active');
+		header.classList.add('header--mobile-blur');
+	})
+
+	menuMobileBtn.addEventListener('click', function () {
+		menuMobile.classList.remove('menu-mobile--active');
+		header.classList.remove('header--mobile-blur');
 	})
 
 });

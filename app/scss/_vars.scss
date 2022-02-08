@@ -22,5 +22,18 @@ $bg: #282828;
 $text: #0A1717;
 
 
+@mixin desktop {
+	@media screen and (max-width: 1080px) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media screen and (max-width: 520px) {
+		@content;
+	}
+}
+
+
 
 

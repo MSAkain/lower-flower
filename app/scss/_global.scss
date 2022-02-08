@@ -1,13 +1,10 @@
 html,
 body {
 	height: 100%;
-	
 }
 
 body {
 	font-weight: 400;
-	display: flex;
-	flex-direction: column;
 	@extend %oswald;
 	font-weight: 400;
 	font-size: 14px;
@@ -18,12 +15,18 @@ body {
 	overflow-x: hidden;
 }
 
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 path {
 	transition: opacity 0.5s;
 }
 
 .main {
-	flex-grow: 1;
+	flex-grow: 1 1 auto;
 }
 
 .container {
@@ -82,7 +85,6 @@ path {
 		}
 	}
 }
-
 
 .hidden {
 	overflow: hidden;
