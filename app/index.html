@@ -135,7 +135,10 @@
 									Ваша корзина
 								</h3>
 								<button class="busket__close" type="button">
-									<img class="busket__img" src="images/icons/close.svg" alt="Закрыть">
+									<picture>
+										<source srcset="images/icons/close.svg" media="(min-width: 1080px)">
+										<img src="images/icons/close-mobile.svg" alt="" />
+									</picture>
 								</button>
 							</div>
 							<ul class="busket__items">
@@ -371,7 +374,7 @@
 					<h2 class="mobile-header__title">
 						lover <br> flower
 					</h2>
-					<div class="mobile-header__basket">
+					<div class="mobile-header__basket header__basket">
 						<button class="mobile-header__bag" type="button">
 							<img src="images/icons/bag-mobile.svg" alt="Иконка корзины">
 						</button>

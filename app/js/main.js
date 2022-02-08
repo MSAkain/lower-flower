@@ -3,7 +3,6 @@ $(function () {
 	const lastScrollTop = 0;
 	const headerScroll = document.querySelector('.header-scroll');
 	const body = document.querySelector('body');
-	const wrapper = document.querySelector('.wrapper')
 	const headerBusket = document.querySelector('.header__basket');
 	const busket = document.querySelector('.busket');
 	const busketClose = document.querySelector('.busket__close');
@@ -22,9 +21,6 @@ $(function () {
 	const menuMobileClose = document.querySelector('.menu-mobile__close');
 	const menuMobileRef = document.querySelector('.menu-mobile__ref');
 	const menuMobileBtn = document.querySelector('.menu-mobile__button');
-
-
-
 
 
 	new Swiper('.popular__swiper', {

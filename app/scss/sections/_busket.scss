@@ -9,6 +9,10 @@
 	transform: translateX(200%);
 	transition: transform 0.5s;
 
+	@include desktop(){ 
+		min-width: 260px;
+	}
+
 	&--active {
 		transform: translateX(0);
 	}
@@ -23,10 +27,18 @@
 		right: 0%;
 		top: -4%;
 		z-index: -1;
+
+		@include desktop(){ 
+			display: none;
+		}
 	}
 
 	&__container {
 		padding: 20px 30px 20px 30px;
+
+		@include desktop(){ 
+			padding: 10px;
+		}
 	}
 
 	&__inner {
@@ -42,16 +54,29 @@
 		align-items: center;
 		padding-bottom: 16px;
 		border-bottom: 1px solid $border;
+
+		@include desktop(){ 
+			padding-bottom: 10px;
+		}
 	}
 
 	&__title {
 		letter-spacing: 0.04em;
 		font-size: 30px;
 		color: $blue;
+
+		@include desktop(){ 
+			font-size: 14px;
+		}
 	}
 
 	&__items {
 		margin-bottom: 20px;
+		overflow-y: auto;
+
+		@include desktop(){ 
+			margin-bottom: 10px;
+		}
 	}
 
 	&__offer {
@@ -61,6 +86,10 @@
 		span {
 			color: $blue;
 		}
+
+		@include desktop(){ 
+			font-size: 10px;
+		}
 	}
 
 	&__list {
@@ -69,6 +98,10 @@
 		padding-bottom: 30px;
 		margin-bottom: 10px;
 		border-bottom: 1px solid $border;
+
+		@include desktop(){ 
+			padding-bottom: 10px;
+		}
 	}
 
 	&__object {
@@ -81,6 +114,11 @@
 		height: 60px;
 		width: 100%;
 		margin-right: 10px;
+
+		@include desktop(){ 
+			width: 43px;
+			height: 40px;
+		}
 	}
 
 	&__content {
@@ -92,6 +130,11 @@
 		font-size: 12px;
 		letter-spacing: 0.02em;
 		margin-bottom: 3px;
+
+		@include desktop(){ 
+			margin-bottom: 0;
+			font-size: 8px;
+		}
 	}
 
 	&__price {
@@ -100,6 +143,11 @@
 		font-size: 12px;
 		margin-bottom: 1px;
 		display: block;
+
+		@include desktop(){ 
+			margin-bottom: 0;
+			font-size: 8px;
+		}
 	}
 
 	&__btn {
@@ -108,6 +156,10 @@
 		font-size: 10px;
 		color: $blue;
 		text-decoration: underline;
+
+		@include desktop(){ 
+			font-size: 8px;
+		}
 	}
 
 	&__bottom {
@@ -117,10 +169,18 @@
 
 	&__cost {
 		color: $blue;
+
+		@include desktop(){ 
+			font-size: 10px;
+		}
 	}
 
 	&__info {
 		margin-bottom: 20px;
+
+		@include desktop(){ 
+			font-size: 10px;
+		}
 	}
 
 	&__button {
@@ -128,6 +188,7 @@
 		padding-bottom: 18px;
 	}
 }
+
 .ticket {
 	width: 100%;
 	padding: 20px 0;
@@ -151,6 +212,10 @@
 	&__title {
 		font-weight: 400;
 		letter-spacing: 0.02em;
+
+		@include desktop(){ 
+			font-size: 12px;
+		}
 	}
 
 	&__box {
@@ -164,6 +229,10 @@
 		color: $blue;
 		font-weight: 700;
 		letter-spacing: 0.04em;
+
+		@include desktop(){ 
+			font-size: 12px;
+		}
 	}
 
 	&__button {
