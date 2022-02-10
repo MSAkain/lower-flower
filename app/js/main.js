@@ -21,6 +21,9 @@ $(function () {
 	const menuMobileClose = document.querySelector('.menu-mobile__close');
 	const menuMobileRef = document.querySelector('.menu-mobile__ref');
 	const menuMobileBtn = document.querySelector('.menu-mobile__button');
+	const mobileHeader = document.querySelector('.mobile-header');
+	const mobileHeaderTitle = document.querySelector('.mobile-header__title');
+
 
 
 	new Swiper('.popular__swiper', {
@@ -41,11 +44,21 @@ $(function () {
 		const st = window.pageYOffset || document.documentElement.scrollTop;
 
 		if (st > lastScrollTop) {
-
-			headerScroll.classList.add("header-scroll--active");
+			headerScroll.classList.add("header-scroll--active")
 		} else {
+			headerScroll.classList.remove("header-scroll--active")
+		}
+	});
 
-			headerScroll.classList.remove("header-scroll--active");
+	window.addEventListener("scroll", function () {
+		const st = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (st > lastScrollTop) {
+			mobileHeaderTitle.classList.add("mobile-header__title--active")
+			mobileHeader.classList.add('mobile-header--active')
+		} else {
+			mobileHeaderTitle.classList.remove("mobile-header__title--active")
+			mobileHeader.classList.remove('mobile-header--active')
 		}
 	});
 
@@ -90,9 +103,8 @@ $(function () {
 		headerScrollSearch.classList.remove('header-scroll__search--active');
 		headerScrollClose.classList.remove('header-scroll__close--active');
 		headerScrollRef.classList.remove('header-scroll__ref--disabled');
-		document.getElementsByName('search-mobile')[0].placeholder = 'Поиск';
+		document.getElementsByName('search')[0].placeholder = 'Поиск';
 	})
-
 
 	menuMobileInput.addEventListener('click', function () {
 		menuMobileInput.classList.add('menu-mobile__input--active');
@@ -100,7 +112,6 @@ $(function () {
 		menuMobileSearch.classList.add('menu-mobile__search--active');
 		menuMobileClose.classList.add('menu-mobile__close--active');
 		menuMobileRef.classList.add('menu-mobile__ref--disabled');
-		document.getElementsByName('search')[0].placeholder = 'Введите свой запрос';
 	})
 
 	menuMobileClose.addEventListener('click', function () {
@@ -109,7 +120,6 @@ $(function () {
 		menuMobileSearch.classList.remove('menu-mobile__search--active');
 		menuMobileClose.classList.remove('menu-mobile__close--active');
 		menuMobileRef.classList.remove('menu-mobile__ref--disabled');
-		document.getElementsByName('search-mobile')[0].placeholder = 'Поиск';
 	})
 
 	menuMobileBurger.addEventListener('click', function () {

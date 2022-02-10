@@ -1,5 +1,13 @@
 .mobile-header {
 	display: none;
+	transition: background-color 0.5s ease-out;
+
+	&--active {
+		background-color: $black;
+		position: fixed;
+		z-index: 100;
+		padding: 16px 0;
+	}
 
 	@include desktop(){ 
 		padding-top: 20px;
@@ -11,6 +19,7 @@
 
 	&__burger {
 		padding-top: 13px;
+		width: 32px;
 	}
 
 	&__title {
@@ -21,9 +30,14 @@
 		text-transform: uppercase;
 		@extend %cormorant;
 		font-weight: 300;
+		transition: font-size 0.5s linear;
 
 		@include mobile(){ 
 			font-size: 40px;
+		}
+
+		&--active {
+			font-size: 20px;
 		}
 	}
 

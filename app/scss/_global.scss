@@ -48,6 +48,16 @@ path {
 	@extend %cormorant;
 	font-size: 100px;
 	font-weight: 400;
+
+	@include desktop(){ 
+		font-size: 70px;
+		margin-bottom: 15px;
+	}
+
+	@include mobile(){ 
+		margin-bottom: 10px;
+		font-size: 40px;
+	}
 }
 
 .logo {
