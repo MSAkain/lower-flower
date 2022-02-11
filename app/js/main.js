@@ -26,15 +26,6 @@ $(function () {
 
 
 
-	new Swiper('.popular__swiper', {
-		slidesPerView: 3,
-		spaceBetween: 20,
-		navigation: {
-			nextEl: '.swiperNext',
-			prevEl: '.swiperPrev'
-		},
-	});
-
 	$('.ticket__input').styler();
 
 
@@ -131,5 +122,26 @@ $(function () {
 		menuMobile.classList.remove('menu-mobile--active');
 		header.classList.remove('header--mobile-blur');
 	})
+
+	function resizeScrenn() {
+		if ($(window).width() >= 1081) {
+			new Swiper('.popular__swiper', {
+				slidesPerView: 3,
+				spaceBetween: 20,
+				navigation: {
+					nextEl: '.swiperNext',
+					prevEl: '.swiperPrev'
+				},
+			});
+		} else {
+			swiper.autoplay.stop();
+		}
+	}
+
+	resizeScrenn();
+
+	$(window).resize(function () {
+		resizeScrenn();
+	});
 
 });

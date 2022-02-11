@@ -20,6 +20,10 @@
 		&--new {
 			background-color: $pink;
 		}
+
+		@include desktop(){ 
+			right: 2%;
+		}
 	}
 
 	&__photo {
@@ -27,6 +31,10 @@
 		transition: filter 0.5s linear;
 		margin-bottom: 14px;
 		&:hover {
+			filter: grayscale(0); 
+		}
+
+		@include desktop(){ 
 			filter: grayscale(0); 
 		}
 	}
