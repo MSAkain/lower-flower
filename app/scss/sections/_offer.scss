@@ -2,6 +2,11 @@
 	margin-bottom: 160px;
 	position: relative;
 
+	@include mobile(){ 
+		margin-bottom: 0;
+		padding-bottom: 84px;
+	}
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -11,6 +16,10 @@
 		background-repeat: no-repeat;
 		right: 0%;
 		top: -7%;
+
+		@include desktop(){ 
+			display: none;
+		}
 	}
 
 	&__box {
@@ -22,9 +31,38 @@
 	&__title {
 		line-height: 1;
 		letter-spacing: 0.15em;
+		position: relative;
+
+		&::before {
+			content: '';
+			display: none;
+
+			@include desktop(){ 
+				position: absolute;
+				display: block;
+				width: 170px;
+				height: 1px;
+				background-color: $pink;
+				bottom: 20%;
+				left: 2%;
+			}
+
+			@include mobile(){ 
+				width: 93px;
+			}
+		}
+
 		span {
 			padding-left: 340px;
 			position: relative;
+
+			@include desktop(){ 
+				padding-left: 180px;
+			}
+
+			@include mobile(){ 
+				padding-left: 102px;
+			}
 
 			&::before {
 				content: '';
@@ -34,12 +72,24 @@
 				background-color: $pink;
 				left:71px;
 				top: 67px;
+
+				@include desktop(){ 
+					display: none;
+				}
 			}
+		}
+
+		@include desktop(){ 
+			max-width: 270px;
 		}
 	}
 
 	&__img {
 		border-radius: 20px;
+
+		@include desktop(){ 
+			display: none;
+		}
 	}
 
 	&__wrapper {
@@ -53,26 +103,45 @@
 		letter-spacing: 0.04em;
 		width: 100%;
 		max-width: 284px;
+
+		@include mobile(){ 
+			max-width: 520px;
+		}
 	}
 
 	&__list {
 		position: relative;
+		max-width: 280px;
 
 		&::after {
 			content: '';
 			position: absolute;
-			background-image: url('../../images/icons/arrow-3.svg');
+			background-image: url('../images/icons/arrow-3.svg');
 			background-repeat: no-repeat;
 			width: 20px;
 			height: 60px;
 			left: -8px;
 			bottom: -33%;
+
+			@include desktop(){ 
+				left: 260px;
+				width: 27px;
+				height: 61px;
+				bottom: -29%;
+				transform: rotate(18deg);
+				background-image: url('../images/icons/arrow-4.svg');
+			}
 		}
 	}
 
 	&__text {
 		padding-left: 22px;
 		margin-bottom: 40px;
+
+		@include desktop(){ 
+			padding-left: 0;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__item {
@@ -101,6 +170,10 @@
 		align-items: center;
 		max-width: 730px;
 		width: 100%;
+
+		@include desktop(){ 
+			display: none;
+		}
 	}
 
 	&__object {
@@ -115,6 +188,10 @@
 		max-width: 255px;
 		display: block;
 		text-align: center;
+
+		@include mobile(){ 
+			margin-left: 0;
+		}
 	}
 }
 
