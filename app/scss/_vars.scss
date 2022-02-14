@@ -28,6 +28,12 @@ $text: #0A1717;
 	}
 }
 
+@mixin ipad {
+	@media screen and (max-width: 670px) {
+		@content;
+	}
+}
+
 @mixin mobile {
 	@media screen and (max-width: 520px) {
 		@content;

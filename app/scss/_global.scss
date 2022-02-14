@@ -29,7 +29,9 @@ path {
 	flex-grow: 1 1 auto;
 }
 
-.inner-bg {
+.inner-bg,
+.wrapper-bg,
+.box-bg {
 	position: relative;
 
 	@include mobile(){ 
@@ -37,10 +39,19 @@ path {
 		&::before {
 			content: '';
 			position: absolute;
-			background-image: url('../images/main/bg-1.svg');
-			width: 100%;
-			height: 117%;
 			background-repeat: no-repeat;
+			width: 100%;
+		}
+	}
+}
+
+.inner-bg {
+
+	@include mobile(){ 
+
+		&::before {
+			background-image: url('../images/main/bg-1.svg');
+			height: 117%;
 			background-size: cover;
 			top: -8%;
 		}
@@ -48,15 +59,11 @@ path {
 }
 
 .wrapper-bg {
-	position: relative;
 
 	@include mobile(){ 
 
 		&::before {
-			content: '';
-			position: absolute;
 			background-image: url('../images/main/bg-2.svg');
-			background-repeat: no-repeat;
 			background-size: contain;
 			width: 100%;
 			height: 50%;
@@ -66,17 +73,12 @@ path {
 }
 
 .box-bg {
-	position: relative;
 
 	@include mobile(){ 
 
 		&::before {
-			content: '';
-			position: absolute;
 			background-image: url('../images/main/bg-3.png');
-			background-repeat: no-repeat;
 			background-size: cover;
-			width: 100%;
 			height: 66%;
 			top: -15%;
 			z-index: 3;

@@ -5,36 +5,86 @@
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 
+	@include ipad(){ 
+		padding: 20px 0;
+	}
+
 	&__colls {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
+		flex-wrap: wrap;
+
+		@include ipad(){ 
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__logo {
+		@include ipad(){ 
+			display: none;
+		}
+
+		&-mobile {
+			display: none;
+
+			@include ipad(){ 
+				
+				display: block;
+				margin-bottom: 20px;
+			}
+		}
 	}
 
 	&__coll {
 
-		&:nth-child(1) {
+		&:nth-child(2) {
 			margin-top: -20px;
 			max-width: 244px;
+
+			@include ipad(){ 
+				order: 4;
+			}
 		}
 	}
 
 	&__subtitle {
 		color: $blue;
 		margin-bottom: 10px;
+
+		@include ipad(){ 
+			text-align: center;
+		}
 	}
 
 	&__text {
 		font-size: 12px;
 		font-weight: 300;
+
+		@include ipad(){ 
+			text-align: center;
+			max-width: 244px;
+			font-size: 10px;
+		}
 	}
 
 	&__item {
-		
 		font-size: 12px;
 		font-weight: 300;
 		&:not(:last-child){
 			margin-bottom: 4px;
+		}
+
+		&-main {
+			margin-bottom: 4px;
+			font-size: 12px;
+			font-weight: 300;
+		}
+
+		@include ipad(){ 
+			display: none;
 		}
 	}
 
@@ -43,12 +93,35 @@
 		color: $blue;
 		&:not(:last-child) {
 			margin-bottom: 20px;
+
+			@include ipad(){ 
+				margin-bottom: 10px;
+			}
+		}
+
+		@include ipad(){ 
+			max-width: 200px;
+			text-align: center;
+		}
+	}
+
+	&__links {
+		@include ipad(){ 
+			margin-bottom: 30px;
 		}
 	}
 }
 
 .contacts {	
 	letter-spacing: 0.1em;
+
+	@include ipad(){ 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 70px;
+	}
 	&__link {
 		display: inline-block;
 		color: $blue;
@@ -80,5 +153,14 @@
 		display: flex;
 		justify-content: space-between;
 		max-width: 112px;
+	}
+
+	&__social {
+
+		@include ipad(){ 
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
 	}
 }
