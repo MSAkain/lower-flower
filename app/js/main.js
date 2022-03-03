@@ -1,5 +1,6 @@
 $(function () {
 
+
 	const lastScrollTop = 0;
 	const headerScroll = document.querySelector('.header-scroll');
 	const body = document.querySelector('body');
@@ -23,13 +24,28 @@ $(function () {
 	const menuMobileBtn = document.querySelector('.menu-mobile__button');
 	const mobileHeader = document.querySelector('.mobile-header');
 	const mobileHeaderTitle = document.querySelector('.mobile-header__title');
+	const scrollToTopButton = document.getElementById('js-top');
 
 
+
+	$('.price__input').ionRangeSlider({
+		type: "double",
+		prefix: "$",
+		onStart: function (data) {
+			$('.price__from').text(data.from);
+			$('.price__to').text(data.to);
+		},
+		onChange: function (data) {
+			$('.price__from').text(data.from);
+			$('.price__to').text(data.to);
+		},
+	});
 
 	$('.ticket__input').styler();
 
-
-
+	$('.directory__select').select2({
+		minimumResultsForSearch: -1
+	});
 
 	window.addEventListener("scroll", function () {
 		const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -122,6 +138,29 @@ $(function () {
 		menuMobile.classList.remove('menu-mobile--active');
 		header.classList.remove('header--mobile-blur');
 	})
+
+	const scrollFunc = () => {
+
+		let y = window.scrollY;
+	};
+
+	window.addEventListener("scroll", scrollFunc);
+
+	const scrollToTop = () => {
+
+		const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+		if (c > 0) {
+			window.requestAnimationFrame(scrollToTop);
+
+			window.scrollTo(0, c - c / 10);
+		}
+	};
+
+	scrollToTopButton.onclick = function (e) {
+		e.preventDefault();
+		scrollToTop();
+	}
 
 	function resizeScrenn() {
 		if ($(window).width() >= 1081) {

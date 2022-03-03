@@ -1,0 +1,52 @@
+.rectangle {
+	max-width: 944px;
+	width: 100%;
+	padding: 15px 10px 20px 20px;
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(20px);
+	border-radius: 20px;
+
+	&__title {
+		line-height: 1;
+		letter-spacing: 0.02em;
+		margin-bottom: 48px;
+
+		span {
+			display: block;
+			margin-left: 212px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 60px;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		margin-left: 212px;
+		max-width: 430px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-bottom: 10px;
+		letter-spacing: 0.04em;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $white;
+		padding: 11px 16px;
+		border: 1px solid $white;
+		border-radius: 40px;
+
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+
+	&__button {
+		
+	}
+}
+

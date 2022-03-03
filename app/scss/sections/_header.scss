@@ -7,6 +7,12 @@
 	position: relative;
 	background-image: url('../images/main/bg.png');
 
+	&--catalog {
+		background-image: none;
+		padding-bottom: 0;
+		margin-bottom: -30px;
+	}
+
 
 	@include desktop(){ 
 		background-image: url('../images/main/mobile-bg.png');
@@ -56,6 +62,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
+
+		&--catalog {
+			padding-bottom: 0;
+		}
 
 		@include desktop(){ 
 			display: none;
@@ -136,6 +146,11 @@
 	&__box {
 		margin-bottom: 26px;
 		text-transform: uppercase;
+
+		&--catalog {
+			margin-bottom: 0;
+		}
+
 		span {
 			font-weight: 300;
 			font-size: 10px;
@@ -163,6 +178,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		&--catalog {
+			align-items: flex-start;
+		}
 	}
 
 	&__title {
@@ -180,6 +199,10 @@
 		backdrop-filter: blur(20px);
 		border-radius: 10px;
 		padding: 20px 17px 20px 18px;
+
+		&--catalog {
+			margin-top: 80px;
+		}
 
 		@include desktop(){ 
 			display: none;
@@ -240,6 +263,10 @@
 		flex-direction: column;
 		justify-content: flex-end;
 
+		&--catalog {
+			bottom: 60px;
+		}
+
 		@include desktop(){ 
 			display: none;
 		}
@@ -248,6 +275,12 @@
 	&__tel {
 		font-size: 16px;
 		margin-bottom: 7px;
+
+		&--catalog {
+			font-size: 14px;
+			margin-bottom: 10px;
+			text-align: right;
+		}
 	}
 
 	&__btn {
@@ -260,6 +293,11 @@
 		color: $blue;
 		text-transform: uppercase;
 		font-size: 14px;
+
+		&--catalog {
+			max-width: 180px;
+			width: 100%;
+		}
 
 		&::after {
 			content: '';
