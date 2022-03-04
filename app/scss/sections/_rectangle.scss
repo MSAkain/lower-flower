@@ -6,6 +6,11 @@
 	backdrop-filter: blur(20px);
 	border-radius: 20px;
 
+	@include laptop(){ 
+		background: none;
+		backdrop-filter: none;
+	}
+
 	&__title {
 		line-height: 1;
 		letter-spacing: 0.02em;
@@ -15,6 +20,15 @@
 			display: block;
 			margin-left: 212px;
 		}
+
+		@include laptop(){ 
+			font-size: 40px;
+			margin-bottom: 10px;
+
+			span {
+				margin-left: 40px;
+			}
+		}
 	}
 
 	&__text {
@@ -23,22 +37,25 @@
 		text-transform: uppercase;
 		margin-left: 212px;
 		max-width: 430px;
+
+		@include laptop(){ 
+			margin-left: 40px;
+			margin-bottom: 20px;
+			max-width: 249px;
+		}
 	}
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
+
+		@include ipad(){ 
+			display: none;
+		}
 	}
 
 	&__item {
 		margin-bottom: 10px;
-		letter-spacing: 0.04em;
-		font-size: 12px;
-		text-transform: uppercase;
-		color: $white;
-		padding: 11px 16px;
-		border: 1px solid $white;
-		border-radius: 40px;
 
 		&:not(:last-child) {
 			margin-right: 10px;
@@ -46,7 +63,13 @@
 	}
 
 	&__button {
-		
+		letter-spacing: 0.04em;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $white;
+		padding: 11px 16px;
+		border: 1px solid $white;
+		border-radius: 40px;
 	}
 }
 

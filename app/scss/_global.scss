@@ -164,6 +164,10 @@ path {
 	&__list {
 		display: flex;
 		margin-bottom: 22px;
+
+		@include laptop(){ 
+			margin-bottom: 0;
+		}
 	}
 
 	&__item {
@@ -177,6 +181,43 @@ path {
 	}
 }
 
+.irs--flat .irs-line {
+	top: 13px;
+	height: 1px;
+	background-color: $white;
+	border-radius: 0;
+}
+
+
+.irs--flat .irs-handle {
+	top: 11px;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	background-color: $blue;
+}
+
+.irs--flat .irs-handle>i:first-child {
+	display: none;
+}
+
+.irs--flat .irs-bar {
+	background-color: $blue;
+	height: 1px;
+	top: 13px;
+}
+
+.irs-from, .irs-to, .irs-single {
+	display: none;
+}
+
+.irs--flat .irs-min, .irs--flat .irs-max {
+	display: none;
+}
+
+.irs--flat {
+	height: 36px;
+}
 
 
 

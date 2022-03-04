@@ -1,0 +1,102 @@
+.filler-mobile {
+	display: none;
+
+	@include ipad(){ 
+		display: block;
+	}
+
+	&__item {
+		margin-bottom: 20px;
+		&--active {
+			.filler-mobile__content {
+				display: block;
+				height: 100%;
+			}
+
+			.filler-mobile__trigger {
+				color: $blue;
+
+				path {
+					fill: $blue;
+				}
+			}
+		}
+	}
+
+	&__trigger {
+		cursor: pointer;
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-size: 16px;
+		color: $pink;
+		transition: color 0.5s linear;
+		margin-bottom: 10px;
+
+		svg {
+			margin-left: 20px;
+
+			path {
+				transition: fill 0.5s linear;
+			}
+		}
+	}
+
+	&__content {
+		display: none;
+		margin-bottom: 20px;
+	}
+
+	&__fillters {
+		display: block;
+		max-width: 300px;
+	}
+
+	::-webkit-scrollbar {
+		width: 1px; 
+		height: 100%;
+		}
+	
+	::-webkit-scrollbar-thumb {
+		background-color: $blue;
+		height: 25px;
+		}
+	
+	::-webkit-scrollbar-button:vertical:start:decrement {
+		display: none;
+		}
+	
+	::-webkit-scrollbar-button:vertical:end:increment {
+		display: none;
+		}
+	
+	::-webkit-scrollbar-button:horizontal:start:decrement {
+		display: none;
+		}
+	
+	::-webkit-scrollbar-button:horizontal:end:increment {
+		display: none;
+		}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__object {
+		margin-bottom: 10px;
+
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+
+	&__button {
+		letter-spacing: 0.04em;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $white;
+		padding: 11px 16px;
+		border: 1px solid $white;
+		border-radius: 40px;
+	}
+}

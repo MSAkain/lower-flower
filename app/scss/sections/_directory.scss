@@ -5,11 +5,19 @@
 		margin-bottom: 20px;
 		display: flex;
 		justify-content: flex-end;
+
+		@include ipad(){ 
+			display: none;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
+
+		@include ipad(){ 
+			display: block;
+		}
 	}
 
 	&__fillters {
@@ -22,7 +30,13 @@
 		backdrop-filter: blur(20px);
 		border-radius: 20px;
 		text-transform: uppercase;
+
+		@include ipad(){ 
+			display: none;
+		}
 	}
+
+	
 
 	&__fillter {
 		position: relative;
@@ -82,11 +96,32 @@
 		overflow: auto;
 	}
 
+	&__item {
+		@include laptop(){
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 60px 30px;
 		margin-bottom: 25px;
+
+		@include laptop(){ 
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include ipad(){ 
+			margin: 0 auto;
+			display: block;
+		}
 	}
 
 	&__upp {
@@ -123,44 +158,6 @@
 
 ::-webkit-scrollbar-button:horizontal:end:increment {
 	display: none;
-	}
-
-	.irs--flat .irs-line {
-		top: 13px;
-		height: 1px;
-		background-color: $white;
-		border-radius: 0;
-	}
-	
-	
-	.irs--flat .irs-handle {
-		top: 11px;
-		height: 5px;
-		width: 5px;
-		border-radius: 50%;
-		background-color: $blue;
-	}
-	
-	.irs--flat .irs-handle>i:first-child {
-		display: none;
-	}
-	
-	.irs--flat .irs-bar {
-		background-color: $blue;
-		height: 1px;
-		top: 13px;
-	}
-	
-	.irs-from, .irs-to, .irs-single {
-		display: none;
-	}
-	
-	.irs--flat .irs-min, .irs--flat .irs-max {
-		display: none;
-	}
-	
-	.irs--flat {
-		height: 36px;
 	}
 
 	.price__label {
@@ -205,4 +202,39 @@
 	}
 
 }
+
+.header-catalog--fillter {
+	height: 124vh;
+
+	@include mobile(){ 
+		height: 144vh;
+	}
+
+	@include phone(){ 
+		height: 180vh;
+	}
+	
+}
+
+.header-catalog--category {
+	height: 76vh;
+
+	@include mobile(){ 
+		height: 94vh;
+	}
+
+	@include phone(){ 
+		height: 124vh;
+	}
+}
+
+.header-catalog--sort {
+	height: 56vh;
+
+	@include phone(){ 
+		height: 80vh;
+	}
+}
+
+
 
