@@ -29,26 +29,33 @@ $(function () {
 	const sort = document.querySelector('.filler-mobile__trigger--sort');
 	const category = document.querySelector('.filler-mobile__trigger--category');
 
-	fillter.addEventListener('click', function () {
-		header.classList.toggle('header-catalog--fillter');
-		header.classList.remove('header-catalog--category');
-		header.classList.remove('header-catalog--scroll');
-		header.classList.remove('header-catalog--sort');
-	})
 
-	category.addEventListener('click', function () {
-		header.classList.toggle('header-catalog--category');
-		header.classList.remove('header-catalog--fillter');
-		header.classList.remove('header-catalog--scroll');
-		header.classList.remove('header-catalog--sort');
-	})
+	if (fillter) {
+		fillter.addEventListener('click', function () {
+			header.classList.toggle('header-catalog--fillter');
+			header.classList.remove('header-catalog--category');
+			header.classList.remove('header-catalog--scroll');
+			header.classList.remove('header-catalog--sort');
+		});
+	}
 
-	sort.addEventListener('click', function () {
-		header.classList.toggle('header-catalog--sort');
-		header.classList.remove('header-catalog--fillter');
-		header.classList.remove('header-catalog--scroll');
-		header.classList.remove('header-catalog--category');
-	})
+	if (category) {
+		category.addEventListener('click', function () {
+			header.classList.toggle('header-catalog--category');
+			header.classList.remove('header-catalog--fillter');
+			header.classList.remove('header-catalog--scroll');
+			header.classList.remove('header-catalog--sort');
+		});
+	}
+
+	if (sort) {
+		sort.addEventListener('click', function () {
+			header.classList.toggle('header-catalog--sort');
+			header.classList.remove('header-catalog--fillter');
+			header.classList.remove('header-catalog--scroll');
+			header.classList.remove('header-catalog--category');
+		});
+	}
 
 
 	document.querySelectorAll('.filler-mobile__trigger').forEach((item) =>
@@ -64,7 +71,7 @@ $(function () {
 				parent.classList.add('filler-mobile__item--active')
 			}
 		})
-	)
+	);
 
 	$('.price__input').ionRangeSlider({
 		type: "double",
@@ -81,19 +88,25 @@ $(function () {
 
 	$('.ticket__input').styler();
 
+	$('.product__input').styler();
+
 	$('.directory__select').select2({
 		minimumResultsForSearch: -1
 	});
 
-	window.addEventListener("scroll", function () {
-		const st = window.pageYOffset || document.documentElement.scrollTop;
+	const active = document.querySelector('.active')
+	if (!active) {
+		window.addEventListener("scroll", function () {
+			const st = window.pageYOffset || document.documentElement.scrollTop;
 
-		if (st > lastScrollTop) {
-			headerScroll.classList.add("header-scroll--active")
-		} else {
-			headerScroll.classList.remove("header-scroll--active")
-		}
-	});
+			if (st > lastScrollTop) {
+				headerScroll.classList.add("header-scroll--active")
+			} else {
+				headerScroll.classList.remove("header-scroll--active")
+			}
+		});
+	}
+
 
 	window.addEventListener("scroll", function () {
 		const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -109,26 +122,22 @@ $(function () {
 
 	headerBusket.addEventListener('click', function () {
 		busket.classList.add('busket--active');
-		header.classList.add('header--blur');
 		body.classList.add('hidden');
 	});
 
 	headerScrollButton.addEventListener('click', function () {
 		busket.classList.add('busket--active');
-		header.classList.add('header--blur');
 		body.classList.add('hidden');
 	});
 
 	busketClose.addEventListener('click', function () {
 		busket.classList.remove('busket--active');
-		header.classList.remove('header--blur');
 		body.classList.remove('hidden');
 	});
 
 	window.addEventListener('click', function (e) {
 		if (!busket.contains(e.target) && !headerBusket.contains(e.target) && !headerScrollButton.contains(e.target)) {
 			busket.classList.remove('busket--active');
-			header.classList.remove('header--blur');
 			body.classList.remove('hidden');
 		}
 	});
@@ -178,27 +187,76 @@ $(function () {
 	})
 
 
-	function resizeScrenn() {
-		if ($(window).width() >= 1081) {
-			new Swiper('.popular__swiper', {
-				slidesPerView: 3,
-				spaceBetween: 20,
-				navigation: {
-					nextEl: '.swiperNext',
-					prevEl: '.swiperPrev'
-				},
-			});
-		} else {
-			swiper.autoplay.stop();
-		}
+	const swiperVertical = document.querySelector('.product__swiper-verticalslider')
+	const swiperProduct = document.querySelector('.product__swiper')
+
+	if (swiperVertical && swiperProduct) {
+
+		let vertical = new Swiper('.product__swiper-verticalslider', {
+			slidesPerView: 2,
+			direction: 'vertical',
+			spaceBetween: 20,
+			navigation: {
+				nextEl: '.swiper__next',
+				prevEl: '.swiper__prev'
+			},
+		});
+
+		let normal = new Swiper('.product__swiper', {
+			slidesPerView: 1,
+			effect: 'fade',
+		});
+
+		vertical.controller.control = normal;
+	}
+
+	const tabNavs = document.querySelectorAll(".tabs__link");
+	const tabPanes = document.querySelectorAll(".tabs__pane");
+
+	for (var i = 0; i < tabNavs.length; i++) {
+
+		tabNavs[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			var activeTabAttr = e.target.getAttribute("data-tab");
+
+			for (var j = 0; j < tabNavs.length; j++) {
+				var contentAttr = tabPanes[j].getAttribute("data-tab-content");
+
+				if (activeTabAttr === contentAttr) {
+					tabNavs[j].classList.add("active");
+					tabPanes[j].classList.add("active");
+				} else {
+					tabNavs[j].classList.remove("active");
+					tabPanes[j].classList.remove("active");
+				}
+			};
+		});
 	}
 
 
-	resizeScrenn();
+	const catalog = document.querySelector('.catalog')
+	if (catalog) {
+		function resizeScrenn() {
+			if ($(window).width() >= 1081) {
+				new Swiper('.popular__swiper', {
+					slidesPerView: 3,
+					spaceBetween: 20,
+					navigation: {
+						nextEl: '.swiperNext',
+						prevEl: '.swiperPrev'
+					},
+				});
+			} else {
+				swiper.autoplay.stop();
+			}
+		}
 
-	$(window).resize(function () {
 		resizeScrenn();
-	});
+
+		$(window).resize(function () {
+			resizeScrenn();
+		});
+	}
 
 
 	const scrollFunc = () => {
@@ -219,11 +277,12 @@ $(function () {
 		}
 	};
 
-	scrollToTopButton.onclick = function (e) {
-		e.preventDefault();
-		scrollToTop();
+
+	window.onload = function () {
+		scrollToTopButton.onclick = function (e) {
+			e.preventDefault();
+			scrollToTop();
+		}
 	}
-
-
 
 });
