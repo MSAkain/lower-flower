@@ -235,6 +235,7 @@ $(function () {
 
 
 	const catalog = document.querySelector('.catalog')
+
 	if (catalog) {
 		function resizeScrenn() {
 			if ($(window).width() >= 1081) {
@@ -255,6 +256,19 @@ $(function () {
 
 		$(window).resize(function () {
 			resizeScrenn();
+		});
+	}
+
+	const suggestion = document.querySelector('.suggestion')
+
+	if (suggestion) {
+		new Swiper('.suggestion__swiper', {
+			slidesPerView: 4,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.swiperNext',
+				prevEl: '.swiperPrev'
+			},
 		});
 	}
 

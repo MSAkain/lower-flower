@@ -1,0 +1,49 @@
+.suggestion {
+	margin-bottom: 200px;
+	
+	&__container {
+		position: relative;
+	}
+
+	&__title {
+		font-size: 30px;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: $blue;
+		margin-bottom: 25px;
+	}
+
+
+	.cart {
+	
+		&__photo {
+			filter: grayscale(0); 
+		}
+	
+	
+		&__button {
+			max-width: 253px;
+		}
+	
+	}
+
+	.swiper-navigation {
+	}
+	.swiperPrev {
+		position: absolute;
+		top: 42%;
+		left: -9%;
+	}
+	.swiperNext {
+		position: absolute;
+		top: 42%;
+		right: -9%;
+	}
+	
+}
+
+
+
+
+
+
