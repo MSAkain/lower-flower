@@ -52,8 +52,13 @@
 	&--product {
 		background-image: none;
 		padding-bottom: 0;
-		margin-bottom: 35px;
+		margin-bottom: 0;
 		height: 140px;
+
+		@include desktop(){ 
+			height: 0;
+			margin-bottom: 150px;
+		}
 	}
 
 	&--mobile-blur {

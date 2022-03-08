@@ -3,6 +3,14 @@
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 
+	@include laptop(){ 
+		margin-bottom: 60px;
+	}
+
+	@include mobile(){ 
+		margin-bottom: 40px;
+	}
+	
 	&__wrapper {
 		display: flex;
 	}
@@ -13,20 +21,43 @@
 		margin-right: 30px;
 		padding: 28px 0;
 		position: relative;
+
+		@include desktop(){ 
+			display: none;
+		}
 	}
 
 	&__info {
 		max-width: 826px;
 		display: flex;
 		justify-content: space-between;
+
+		@include laptop(){ 
+			display: block;
+			margin: 0 auto;
+		}
+
+		@include mobile(){ 
+			max-width: 300px;
+		}
 	}
 
 	&__slider {
 		margin-right: 30px;
+
+		@include laptop(){ 
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__swiper {
 		max-width: 350px;
+
+		@include laptop(){ 
+			max-width: 446px;
+			width: 100%;
+		}
 	}
 
 
@@ -37,6 +68,10 @@
 	&__descr {
 		max-width: 446px;
 		width: 100%;
+
+		@include mobile(){ 
+			max-width: 300px;
+		}
 	}
 
 	&__back {
@@ -45,6 +80,10 @@
 		position: relative;
 		padding-left: 24px;
 		font-size: 10px;
+
+		@include laptop(){ 
+			display: none;
+		}
 
 
 		&::before {
@@ -63,6 +102,11 @@
 		line-height: 1.1;
 		margin-bottom: 5px;
 		letter-spacing: 0.02em;
+
+		@include laptop(){ 
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__price {
@@ -86,6 +130,10 @@
 	&__list {
 		margin-bottom: 70px;
 		max-width: 428px;
+
+		@include laptop(){ 
+			margin-bottom: 30px;
+		}
 	}
 
 	&__object {
@@ -107,11 +155,19 @@
 
 	&__button {
 		max-width: 255px;
+
+		@include desktop(){ 
+			max-width: 180px;
+		}
 	}
 
 	.jq-number__field {
 		width: 160px;
 		height: 55px;
+
+		@include desktop(){ 
+			width: 108px;
+		}
 	}
 
 	.jq-number__field input {
@@ -132,6 +188,10 @@
 
 .prices {
 	font-size: 30px;
+
+	@include laptop(){ 
+		font-size: 20px;
+	}
 
 	&__new {
 		margin-right: 20px;

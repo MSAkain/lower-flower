@@ -1,12 +1,17 @@
 .tabs {
 	margin-bottom: 100px;
 
+	
 	&__links {
 		display: flex;
 		max-width: 718px;
 		justify-content: space-between;
 		margin: 0 auto;
 		margin-bottom: 60px;
+
+		@include laptop(){ 
+			margin-bottom: 21px;
+		}
 	}
 
 	&__link {
@@ -22,6 +27,10 @@
 		width: 365px;
 		display: flex;
 		justify-content: center;
+
+		@include laptop(){ 
+			font-size: 14px;
+		}
 	}
 
 	.tabs__link.active {
@@ -32,6 +41,7 @@
 
 	&__pane {
 		display: none;
+
 	}
 
 	.tabs__pane.active {
@@ -44,12 +54,20 @@
 		text-transform: uppercase;
 		font-size: 20px;
 		letter-spacing: 0.04em;
+
+		@include laptop(){ 
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__list {
-		
 		margin-bottom: 60px;
 		max-width: 730px;
+
+		@include laptop(){ 
+			margin-bottom: 40px;
+		}
 	}
 
 	&__item {
@@ -59,6 +77,10 @@
 		text-transform: uppercase;
 		position: relative;
 		padding-left: 30px;
+
+		@include laptop(){ 
+			font-size: 14px;
+		}
 
 		&::before {
 			content: '';
@@ -89,11 +111,19 @@
 		font-weight: 300;
 		font-size: 20px;
 		letter-spacing: 0.02em;
+
+		@include laptop(){ 
+			font-size: 14px;
+		}
 	}
 
 	&__info {
 		display: block;
 		margin-bottom: 60px;
+
+		@include laptop(){ 
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
@@ -102,12 +132,22 @@
 		font-weight: 400;
 		letter-spacing: 0.06em;
 		color: $blue;
+
+		@include laptop(){ 
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__descr {
 		letter-spacing: 0.06em;
 		margin-bottom: 20px;
 		display: block;
+
+		@include laptop(){ 
+			max-width: 287px;
+			margin-bottom: 30px;
+		}
 	}
 
 	&__raiting {
@@ -120,6 +160,49 @@
 		}
 	}
 
+	&__rating {
+		width: 200px;
+		height: 24px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	&__rating:not(:checked)>input {
+		display: none;
+	}
+
+	&__rating:not(:checked)>label {
+		width: 24px;
+		cursor: pointer;
+		font-size: 24px;
+		color: lightgrey;
+		text-align: center;
+		line-height: 1;
+	}
+
+	&__rating:not(:checked)>label:before {
+		content: '★';
+	}
+
+	&__rating>input:checked~label {
+		color: $gold;
+	}
+
+	&__rating:not(:checked)>label:hover,
+	&__rating:not(:checked)>label:hover~label {
+		color: $gold;
+	}
+
+	&__rating>input:checked+label:hover,
+	&__rating>input:checked+label:hover~label,
+	&__rating>input:checked~label:hover,
+	&__rating>input:checked~label:hover~label,
+	&__rating>label:hover~input:checked~label {
+		color: $gold;
+	}
+
 	&__form {
 		max-width: 540px;
 		width: 100%;
@@ -128,6 +211,10 @@
 
 .form {
 	letter-spacing: 0.06em;
+
+	@include laptop(){ 
+		font-size: 14px;
+	}
 
 	&__label {
 		margin-bottom: 4px;

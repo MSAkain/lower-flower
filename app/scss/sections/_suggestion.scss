@@ -1,5 +1,21 @@
 .suggestion {
+	position: relative;
 	margin-bottom: 200px;
+
+	@include laptop(){ 
+		display: none;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-image: url('../images/product/bg-bottom.svg');
+		background-size: cover;
+		bottom: -37%;
+		width: 100%;
+		height: 800px;
+		z-index: -1;
+	}
 	
 	&__container {
 		position: relative;
@@ -27,8 +43,6 @@
 	
 	}
 
-	.swiper-navigation {
-	}
 	.swiperPrev {
 		position: absolute;
 		top: 42%;

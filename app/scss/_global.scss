@@ -33,6 +33,42 @@ path {
 
 .main {
 	flex: 1 1 auto;
+
+	&--product {
+		position: relative;
+		padding-top: 35px;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			background-image: url('../images/product/bg-top.svg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 25%;
+			width: 100%;
+			top: -7%;
+			z-index: -1;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 58%;
+			background-image: url("../images/product/bg-right.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			top: 20%;
+			right: -64%;
+		}
+
+		@include laptop(){ 
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
 }
 
 .inner-bg,
@@ -177,11 +213,16 @@ path {
 
 	&--product {
 		margin-bottom: 60px;
+
+		@include laptop(){ 
+			margin-bottom: 30px;
+		}
 	}
 
 	&__list {
 		display: flex;
 		margin-bottom: 22px;
+		flex-wrap: wrap;
 
 		@include laptop(){ 
 			margin-bottom: 0;
@@ -196,6 +237,28 @@ path {
 		font-size: 12px;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
+	}
+
+	&__back {
+		display: none;
+		position: relative;
+		padding-left: 24px;
+		font-size: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			left: 0;
+			bottom: -1px;
+			background-image: url('../images/product/arrow-left.svg');
+		}
+
+		@include laptop(){ 
+			display: block;
+			margin-top: 20px;
+		}
 	}
 }
 

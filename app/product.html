@@ -13,7 +13,6 @@
 
 	<div class="wrapper wrapper--product">
 
-
 		<header class="header header--product">
 
 			<div class=" menu-mobile">
@@ -325,7 +324,7 @@
 			</div>
 		</header>
 
-		<main class="main">
+		<main class="main main--product">
 
 			<div class="breadcrumbs breadcrumbs--product">
 				<div class="container">
@@ -351,6 +350,9 @@
 							</a>
 						</li>
 					</ul>
+					<a class="breadcrumbs__back" href="#">
+						назад
+					</a>
 				</div>
 			</div>
 
@@ -597,7 +599,18 @@
 								<span>
 									Ваша оценка:
 								</span>
-								<img class="tabs__img" src="images/product/stars.svg" alt="Звезды">
+								<div class="tabs__rating">
+									<input type="radio" id="star-1" name="rating" value="1">
+									<label for="star-1" title="Оценка «1»"></label>
+									<input type="radio" id="star-2" name="rating" value="2">
+									<label for="star-2" title="Оценка «2»"></label>
+									<input type="radio" id="star-3" name="rating" value="3">
+									<label for="star-3" title="Оценка «3»"></label>
+									<input type="radio" id="star-4" name="rating" value="4">
+									<label for="star-4" title="Оценка «4»"></label>
+									<input type="radio" id="star-5" name="rating" value="5">
+									<label for="star-5" title="Оценка «5»"></label>
+								</div>
 							</div>
 							<form class="tabs__form form">
 								<label class="form__label" for="comment">
